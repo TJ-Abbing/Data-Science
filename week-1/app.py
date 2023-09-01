@@ -1,1 +1,1 @@
-# All exercise down within the terminal.
+# All exercises were done within the terminal. See Trello.
