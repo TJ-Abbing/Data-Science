@@ -5,7 +5,7 @@ days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun
 currentDay = int(input("Enter a number: "))
 
 # Check if the entered number is within the valid range (0 to 6)
-if 0 <= currentDay < len(days):
+if 0 <= currentDay and currentDay < len(days):
     # If the number is valid, print the corresponding day of the week
     print(days[currentDay])
 else:
