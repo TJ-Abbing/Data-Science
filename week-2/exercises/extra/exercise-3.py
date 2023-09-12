@@ -7,4 +7,13 @@ If the user is 18 or older, the ticket costs $10.
 Use an if-elif-else statement to accomplish this.
 """
 
-# TODO
+input_age = int(input("Enter your age: "))
+
+if input_age <= 12  :
+    print("Ticket price: $5")
+elif 13 <= input_age <= 17: 
+    print("Ticket price: $7")
+elif input_age >= 18 :
+    print("Ticket price: $10")
+else: 
+    print("Something went wrong.")

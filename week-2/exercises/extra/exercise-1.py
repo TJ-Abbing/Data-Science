@@ -12,3 +12,5 @@ if input_age >= 18:
     print("You are an adult.")
 elif input_age < 18:
     print("You are a minor.")
+else:
+    print("Something went wrong.")
