@@ -9,8 +9,8 @@ input_number_1 = int(input("Enter a number: "))
 input_number_2 = int(input("Enter another number: "))
 
 comparison = {
-    input_number_1 == input_number_2 : "The numbers are equal.",
     input_number_1 > input_number_2 : "The first number is greater.",
+    input_number_1 == input_number_2 : "The numbers are equal.",
     input_number_1 < input_number_2 : "The second number is greater."
 }
 
