@@ -6,7 +6,6 @@ If the user is younger than 18, print "You are a minor."
 Use an if-else statement to accomplish this.
 """
 
-# TODO
 input_age = int(input("Enter your age: "))
 
 if input_age >= 18:
