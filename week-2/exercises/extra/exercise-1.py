@@ -7,3 +7,9 @@ Use an if-else statement to accomplish this.
 """
 
 # TODO
+input_age = int(input("Enter your age: "))
+
+if input_age >= 18:
+    print("You are an adult.")
+elif input_age < 18:
+    print("You are a minor.")
