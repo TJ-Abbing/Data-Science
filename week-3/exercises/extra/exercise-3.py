@@ -18,8 +18,9 @@ elif base == 0:
     print("The triangle does not exist for 0.")
 # Calculate the triangle
 else:
-    while base > 0:
-        for i in range(base, 0, -1):
+    temp = base
+    while temp > 0:
+        for i in range(base, base - temp, -1):
             print(i, end="")
         print()
-        base = base - 1
+        temp = temp - 1
