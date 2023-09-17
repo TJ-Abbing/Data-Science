@@ -7,4 +7,19 @@ Write a nested while-loop that creates a triangle with base width and height. Fo
 
 """
 
-# TODO
+# Declare variables
+base = int(input("Enter the base width and the height of the triangle: "))
+
+# Check if the number is negative
+if base < 0:
+    print("Sorry, the triangle does not exist for negative integers. Please enter a positive integer.")
+# Check if the number is 0
+elif base == 0:
+    print("The triangle does not exist for 0.")
+# Calculate the triangle
+else:
+    while base > 0:
+        for i in range(base, 0, -1):
+            print(i, end="")
+        print()
+        base = base - 1
