@@ -8,4 +8,17 @@ A few examples:
 The number can have any amount of digits.
 """
 
-# TODO
+# Declare variables.
+integer = int(input("Enter an integer: "))
+
+# Convert integer to string.
+string = str(integer)
+
+# Reverse string.
+reverse = string[::-1]
+
+# Check if string is equal to reverse.
+if string == reverse:
+    print("The number " + string + " is a palindrome.")
+else:
+    print("The number " + string + " is not a palindrome.")
