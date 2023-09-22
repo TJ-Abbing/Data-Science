@@ -6,12 +6,12 @@ Then use that function in another function to count the number of vowels in a st
 string = input("Enter a string: ")
 
 # Declare function.
-def is_vowel(letter):
+def is_vowel(possible_vowel):
     # Check if letter is a vowel.
-    if letter in "aeiouAEIOUI":
-        # Return True.
+    if possible_vowel in "aeiouAEIOUI":
+        # Return True if vowel.
         return True
-    # Return False.
+    # Return False if not a vowel.
     return False
 
 # Declare function.
@@ -22,7 +22,7 @@ def count_vowels(string):
     for letter in string:
         # Check if letter is a vowel.
         if is_vowel(letter):
-            # Increase count by 1.
+            # Increase count by 1 if vowel (=True).
             count += 1
     # Return count.
     return count
