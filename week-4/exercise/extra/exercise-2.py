@@ -16,13 +16,11 @@ def sum_odd_numbers(number):
         print("Can't be equal to 0.")
     # Calculate sum of odd numbers.
     else:
-        # Check if number is even.
-        if number % 2 == 0:
-            return
-        else:
-            sum = 0
-            for i in range (1, number + 1, 2):
+        sum = 0
+        for i in range (1, number + 1):
+            # Check if number is odd.
+            if i % 2 != 0:
                 sum += i
-            print(f"The sum of odd numbers from 1 to {number} is {sum}.")
+        print(f"The sum of odd numbers from 1 to {number} is {sum}.")
 # Call function.
 sum_odd_numbers(number)
