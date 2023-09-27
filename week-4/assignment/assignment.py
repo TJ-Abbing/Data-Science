@@ -44,7 +44,7 @@ def isExpat(age, salary):
     else:
         return False
 
-print("The employee is an expat." if isExpat(age, salary) else "The employee is not an expat.")
+# print("The employee is an expat." if isExpat(age, salary) else "The employee is not an expat.")
 
 """
 3.
@@ -81,7 +81,7 @@ def tax_deduction(age, salary):
     elif salary >= 6000:
         return salary * 0.6
     
-print(f"The amount of tax to be deducted from the salary is {tax_deduction(age, salary)}.")
+# print(f"The amount of tax to be deducted from the salary is {tax_deduction(age, salary)}.")
 
 """
 4. Write a function called 'net_salary' that will first deduct tax from the gross amount
@@ -104,7 +104,7 @@ def net_salary(age, salary, days):
     net_salary = tax_deduction(age, salary) + 30 + (days * 4 * 10 if salary < 5000 else days * 4 * 5)
     return net_salary
 
-print(f"The net salary to be paid is {net_salary(age, salary, days)}.")
+# print(f"The net salary to be paid is {net_salary(age, salary, days)}.")
 
 """
 5. Write a function called 'info' that returns a string like this, replacing Bob with the
