@@ -85,14 +85,42 @@ def add_student(course_students, first_name, last_name, student_number):
     course_students[1].append((first_name, last_name, student_number))
     return "Student successfully added to course"
 
+# Call the function.
+print(add_student(course_students, "Bob", "Smith", 100234))
+print(add_student(course_students, "Alice", "Cordon", 100236))
 
-# Use case examples
-# print(add_student(course_students, "Bob", "Smith", 100234))
-# print(add_student(course_students, "Alice", "Cordon", 100236))
-# print(remove_student(course_students, 100237))
-# print(remove_student(course_students, 100234))
+# Create a function that removes a student from this list.
+def remove_student(course_students, student_number):
+    # The function takes a course students list and a student number as parameters and returns this string: "Student was successfully removed from the course", If it finds the student,
+    for student in course_students[1]:
+        if student[2] == student_number:
+            course_students[1].remove(student)
+            return "Student was successfully removed from the course"
+    # otherwise it returns this string "There is no student with this student number in this course.
+    return "There is no student with this student number in this course"
 
-# print(add_grade(100234, 7.0))
-# print(add_grade(100236, 8.6))
+# Call the function.
+print(remove_student(course_students, 100237))
+print(remove_student(course_students, 100234))
+
+# Create a function that adds grades to the course grade list, taking the student number and the grade as parameters.
+def add_grade(student_number, grade):
+    # This function will have two different types of functionality.
+    # First, it checks if the student number given as argument already has a grade in the grade list or not.
+    for student in course_grades[1]:
+        if student[0] == student_number:
+            # If there is already a grade registered for this student number, it will update the grade and return this string: "Grade was successfully updated".
+            student[1] = grade
+            return "Grade was successfully updated"
+    # Otherwise, it will add the student and the grade to the list.
+    course_grades[1].append([student_number, grade])
+    return "Grade was successfully added"
+
+# Call the function.
+print(add_grade(100234, 7.0))
+print(add_grade(100236, 8.6))
+
+# Create a function that calculates the class average grade taking the grade list as a parameter.
+
 # print(class_average(course_grades_draft))
 # print(class_average(course_students))
