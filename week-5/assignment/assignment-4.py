@@ -1,3 +1,10 @@
+# Defining lists and tuples
+course_students = ["Python for applied data science", [("Bob", "Smith", 100234), ("John", "Snow", 100235)]]
+
+course_grades_draft = ["Python for applied data science", []]
+
+course_grades = ["Python for applied data science", [[100234, 5.6], [100235, 8.0]]]
+
 """
 Instructions
 
@@ -21,15 +28,7 @@ of code that I mentioned as a HINT to get an idea of what we are getting with ea
 indexing.
 
 Now that we understood what our lists are, I want you to:
-"""
 
-course_students = ["Python for applied data science", [("Bob", "Smith", 100234), ("John", "Snow", 100235)]]
-
-course_grades_draft = ["Python for applied data science", []]
-
-course_grades = ["Python for applied data science", [[100234, 5.6], [100235, 8.0]]]
-
-"""
 Create a function to add new students to this list, taking a course student list,
 first name, last name, and student number as parameters. It will first check if the
 student is already in the list or not, if so it will return this string: "Student is
@@ -43,11 +42,13 @@ def add_student(course_students, first_name, last_name, student_number):
     for student in course_students[1]:
         if student[2] == student_number:
             return "Student is already enrolled in this course"
-    # If not, it adds the student to the list and returns this string "Student successfully added to the course".
+    # If not, it adds the student to the list and returns this string "Student successfully added to course".
     course_students[1].append((first_name, last_name, student_number))
     return "Student successfully added to the course"
+
+# Call the function.
 print(add_student(course_students, "Bob", "Smith", 100234))
-print(add_student(course_students, "Alice", "Cordon", 100236))  
+print(add_student(course_students, "Alice", "Cordon", 100236))
 
 """
 Create a function that removes a student from this list. The function takes a
@@ -59,15 +60,17 @@ this course.
 
 # Create a function that removes a student from this list.
 def remove_student(course_students, student_number):
-    # Returns this string: "Student was successfully removed from the course", If it finds the student,
+    # Returns this string: "Student was successfully removed from the course", If it finds the student.
     for student in course_students[1]:
         if student[2] == student_number:
             course_students[1].remove(student)
             return "Student was successfully removed from the course"
     # Otherwise it returns this string "There is no student with this student number in this course.
     return "There is no student with this student number in this course"
+
+# Call the function.
 print(remove_student(course_students, 100237))
-print(remove_student(course_students, 100234))  
+print(remove_student(course_students, 100234))
 
 """
 Create a function that adds grades to the course grade list, taking the student
@@ -90,8 +93,12 @@ def add_grade(course_grades, student_number, grade):
     # Otherwise, it will add the student and the grade to the list.
     course_grades[1].append([student_number, grade])
     return "Grade added successfully"
-print(add_grade(100234, 7.0))
-print(add_grade(100236, 8.6))
+
+# Call the function.
+print(add_grade(course_grades, 100234, 7.0))
+print(add_grade(course_grades, 100236, 8.6))
+# print(add_grade(course_grades_draft, 100234, 7.0))
+# print(add_grade(course_grades_draft, 100236, 8.6))
 
 """
 Create a function that calculates the class average grade taking the grade list as a
@@ -112,9 +119,12 @@ def class_average(course_grades):
         total_grades = sum([grade[1] for grade in course_grades[1]])
         average = total_grades / len(course_grades[1])
         return f"The average grade of this course is {average:.1f}"
-print(class_average(course_grades_draft))
-print(class_average(course_students))
 
+# Call the function.
+print(class_average(course_grades_draft))
+print(class_average(course_grades))
+
+# Print the course students and grades.
 # print(course_students) # This will print both the name of the course and the list of tuples that has students' information.
 # print(course_students[0]) # This will print the name of the course
 # print(course_students[1]) #  This will print the list of tuples that has students' information.
