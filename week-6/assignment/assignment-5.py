@@ -13,8 +13,10 @@ Adds a phone number to the contact with the given name. If the
 contact doesn't exist, create a new one.
 """
 
-# def add_contact(name, phone_number):
-    
+def add_contact(name, phone_number):
+    if name not in contacts:
+        contacts[name] = set()
+    contacts[name].add(phone_number)
 
 """
 • remove_contact(name):
@@ -24,7 +26,12 @@ When the contact is removed, it prints this message: "Contact
 prints: "Contact {name} not found".
 """
 
-# def remove_contact(name): 
+def remove_contact(name):
+    if name not in contacts:
+        print(f"Contact {name} not found")
+    elif name in contacts:
+        del contacts[name]
+        print(f"Contact {name} has been removed")
     
 
 """
@@ -63,3 +70,19 @@ numbers in front of the name.
 """
 
 # def list_contacts():
+
+# Test the functions
+add_contact("Alice", "123-456-7890")
+add_contact("Bob", "987-654-3210")
+add_contact("Alice", "555-555-5555")
+add_contact("Alice", "666-666-666")
+# remove_number("Alice", "555-555-5555")
+# remove_number("Alice", "444-444-4444")
+# list_contacts()
+# find_contact("Alice")
+remove_contact("Bob")
+remove_contact("John")
+# list_contacts()
+
+# print the dictionary
+print(contacts)
