@@ -33,7 +33,6 @@ def remove_contact(name):
         del contacts[name]
         print(f"Contact {name} has been removed")
     
-
 """
 • remove_number(name, phone_number):
 Removes a number from the given contact.
