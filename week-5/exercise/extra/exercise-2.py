@@ -8,22 +8,22 @@ Try to modify the first item in the new tuple (you should get an error).
 """
 # 1. Create a tuple with three items: "apple", "banana", "cherry".
 
-# TODO
+tuple = ("apple", "banana", "cherry")
 
 # 2. Print the second item in the tuple.
 
-# TODO
+print(tuple[1])
 
 # 3. Slice the tuple to create a new tuple with the first two items.
 
-# TODO
+second_tuple = tuple[0:2]
 
 # 4. Print the new tuple.
 
-# TODO
+print(second_tuple)
 
 # 5. Try to modify the first item in the new tuple (you should get an error).
 
-# TODO
+second_tuple[0] = "pear"
 
 # TypeError: 'tuple' object does not support item assignment
