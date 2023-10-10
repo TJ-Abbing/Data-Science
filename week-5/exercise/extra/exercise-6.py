@@ -7,10 +7,11 @@ with only the strings that have more than 5 characters.
 listOfAnimalStrings = ["Dog", "Cat", "Mouse", "Cow", "Horse"]
 
 def fiveCharsPlusOnly(listOfAnimalStrings):
-    listOfFiveCharplus = []
+    listOfFiveCharPlusAnimals = []
     for animal in listOfAnimalStrings:
-        if animal.len >= 5:
-            listOfFiveCharplus.append[animal]
+        if len(animal) >= 5:
+            listOfFiveCharPlusAnimals.append(animal)
+    return print(listOfFiveCharPlusAnimals)
 
 # Call function.
 fiveCharsPlusOnly(listOfAnimalStrings)
