@@ -5,21 +5,23 @@ Create a dictionary called "phone_book" with the following key-value pairs:
 "Bob": "555-5678"
 "Charlie": "555-9999"
 """
-
-# TODO
+phone_book = {
+    "Alice": "555-1234",
+    "Bob": "555-5678",
+    "Charlie": "555-9999"
+}
 
 # Access the phone number for "Bob" and print it.
-
-# TODO
+print(phone_book["Bob"])
 
 # Iterate over the keys of "phone_book" and print them.
-
-# TODO
+for entry in phone_book:
+    print(entry)
 
 # Iterate over the values of "phone_book" and print them.
-
-# TODO
+for entry in phone_book.values():
+    print(entry)
 
 # Iterate over the key-value pairs of "phone_book" and print them.
-
-# TODO
+for key, value in phone_book.items():
+    print(key, value)
