@@ -44,6 +44,7 @@ class Shop:
         product = {"name": name, "price": price, "quantity": quantity}
         self.products.append(product)
         print(f"{name} added to the inventory with a price of €{price} and a quantity of {quantity}.")
+
     """
     list_products(self): List all the available products in the inventory.
     Display the products using the following format:
@@ -64,8 +65,8 @@ class Shop:
         else:
             print(f"Available products in {self.name} ({self.city}):")
             for product in self.products:
-                print(f"{product['name']}, Price: €{product['price']}, Quantity: {product['quantity']}")
-    
+                print(f"Name: {product['name']}, Price: €{product['price']}, Quantity: {product['quantity']}")
+
     """
     calculate_total(self): Calculate the total value of all products in the
     inventory. The total value is calculated by summing the prices
@@ -78,7 +79,7 @@ class Shop:
         total = 0
         for product in self.products:
             total += product['price'] * product['quantity']
-        return print(product)
+        return total
 
     """
     apply_discount(self, product_name, discount _ percent): Apply a
