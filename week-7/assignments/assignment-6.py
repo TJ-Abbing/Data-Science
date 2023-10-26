@@ -6,7 +6,7 @@ total value of the products, apply discounts, and display shop
 information.
 """
 
-# Creat Class Shop
+# Declare Class.
 class Shop:
 
     """
