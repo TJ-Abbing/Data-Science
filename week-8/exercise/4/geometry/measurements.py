@@ -15,4 +15,3 @@ def rectangle_area(rectangle):
 
 def rectangle_perimeter(rectangle):
     return 2 * (rectangle.width + rectangle.height)
-
