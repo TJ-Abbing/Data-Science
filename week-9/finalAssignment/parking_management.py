@@ -1,27 +1,47 @@
 # parking_management.py
-from datetime import datetime
+# from datetime import datetime
 
 class Car:
-    # TODO
+    
+    def __init__(self, license_plate, brand, model):
+        self.license_plate = license_plate
+        self.brand = brand
+        self.model = model
     
 class CarParking:
+    
     def __init__(self, capacity):
-        # TODO
+        self.capacity = capacity
+        self.available_spots = capacity
+        self.parked_cars = {}  
 
     def park_car(self, car):
-        # TODO
+            
+        # Check whether there are any available spots left.
+        if self.available_spots == 0:
+            print("Parking lot is full. No available spaces.")
+        elif self.available_spots >= 1:
+            # Check whether the car in question is already parked.
+            for parked_car in self.parked_cars.values():
+                if parked_car['license_plate'] == car.license_plate: 
+                    print(f"Car with license plate {car.license_plate} is already parked!")
+                    return
+            # Park car if enough spots & not already parked.
+            self.available_spots -= 1
+            self.parked_cars[car.license_plate] = car.__dict__
+            print(f"Car with license plate {car.license_plate} is parked.")
 
-    def remove_car(self, car):
-        # TODO
+    # def remove_car(self, car):
+    #     # TODO
 
-    def available_spaces(self):
-        # TODO
+    # def available_spaces(self):
+    #     # TODO
     
-    def status(self):
-        # TODO
+    # def status(self):
+    #     # TODO
 
-def calculate_fee(duration, rate=0.2):
-    # TODO
+# def calculate_fee(duration, rate=0.2):
+#     # TODO
 
 
 # Example usage:
@@ -34,15 +54,17 @@ if __name__ == "__main__":
 
     Hogeschool_parking.park_car(car1)
     Hogeschool_parking.park_car(car2)
+
+    print(Hogeschool_parking.parked_cars)
     
-    print(Hogeschool_parking.available_spaces())
+    # print(Hogeschool_parking.available_spaces())
 
-    Hogeschool_parking.park_car(car3)
+    # Hogeschool_parking.park_car(car3)
 
-    Hogeschool_parking.remove_car(car1)
-    Hogeschool_parking.remove_car(car2)
+    # Hogeschool_parking.remove_car(car1)
+    # Hogeschool_parking.remove_car(car2)
 
-    Hogeschool_parking.status()
+    # Hogeschool_parking.status()
 
 # This is the expected output after running this file itself.
 """
