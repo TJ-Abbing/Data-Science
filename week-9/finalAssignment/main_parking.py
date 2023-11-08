@@ -1,9 +1,9 @@
 # main_parking.py
-from # TODO
+from parking_management import Car, CarParking, calculate_fee
 
 def main():
     print("========== Set Capacity ==========")
-    # TODO
+    hr_parking_lot = CarParking(int(input("Enter the capacity of the parking lot: ")))
 
     while True:
         print("\nParking Management Menu:")
@@ -16,17 +16,26 @@ def main():
         choice = input("Enter your choice from 1 to 5: ")
 
         if choice == "1":
-            # TODO
+            license_plate = input("Enter the car's license plate number: ")
+            brand = input("Enter the car's brand: ")
+            model = input("Enter the car's model: ")
+            car = Car(license_plate, brand, model)
+            hr_parking_lot.park_car(car)
         elif choice == "2":
-            # TODO
+            license_plate = input("Enter the car's license plate number: ")
+            car = Car(license_plate, "", "")
+            parking_duration = hr_parking_lot.remove_car(car)
+            if parking_duration is not None:
+                fee = calculate_fee(parking_duration, rate=0.2)
+                print(f"Fee: €{fee:.2f}")
         elif choice == "3":
-            # TODO
+            print(f"Available parking spaces: {hr_parking_lot.available_spaces()}")
         elif choice == "4":
-            # TODO
+            hr_parking_lot.status()
         elif choice == "5":
-            # TODO
+            break
         else:
-            # TODO
+            print("Invalid choice. Please enter a number from 1 to 5.")
 
 if __name__ == "__main__":
     main()
