@@ -1,5 +1,5 @@
 # parking_management.py
-# from datetime import datetime
+from datetime import datetime
 
 class Car:
     
@@ -18,7 +18,7 @@ class CarParking:
     def park_car(self, car):
             
         # Check whether there are any available spots left.
-        if self.available_spots == 0:
+        if self.available_spots <= 0:
             print("Parking lot is full. No available spaces.")
         elif self.available_spots >= 1:
             # Check whether the car in question is already parked.
@@ -26,13 +26,18 @@ class CarParking:
                 if parked_car['license_plate'] == car.license_plate: 
                     print(f"Car with license plate {car.license_plate} is already parked!")
                     return
-            # Park car if enough spots & not already parked.
-            self.available_spots -= 1
-            self.parked_cars[car.license_plate] = car.__dict__
-            print(f"Car with license plate {car.license_plate} is parked.")
+        # Park car if enough spots & not already parked.
+        parked_at = datetime.now()
+        self.available_spots -= 1
+        
+        car_dict = car.__dict__
+        car_dict['parked_at'] = parked_at.strftime('%Y-%m-%d %H:%M:%S')
+        
+        self.parked_cars[car.license_plate] = car_dict
+        print(f"Car with license plate {car.license_plate} is parked.")
 
     # def remove_car(self, car):
-    #     # TODO
+        
 
     # def available_spaces(self):
     #     # TODO
