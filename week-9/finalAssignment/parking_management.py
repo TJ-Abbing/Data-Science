@@ -36,9 +36,18 @@ class CarParking:
         self.parked_cars[car.license_plate] = car_dict
         print(f"Car with license plate {car.license_plate} is parked.")
 
-    # def remove_car(self, car):
-        
+    def remove_car(self, car):
 
+        parked_cars_copy = self.parked_cars.copy()
+        for parked_car in parked_cars_copy.values():
+            if parked_car['license_plate'] == car.license_plate:
+                parked_at = datetime.strptime(parked_car['parked_at'], '%Y-%m-%d %H:%M:%S')
+                parking_duration_minutes = round((datetime.now() - parked_at).total_seconds() / 60)
+                del self.parked_cars[car.license_plate]
+                print(f"Car with license plate {car.license_plate} is exiting. Parking duration: {parking_duration_minutes} minutes.")
+                return
+        print(f"Car with license plate {car.license_plate} is not in the parking lot.")
+    
     # def available_spaces(self):
     #     # TODO
     
@@ -66,8 +75,8 @@ if __name__ == "__main__":
 
     # Hogeschool_parking.park_car(car3)
 
-    # Hogeschool_parking.remove_car(car1)
-    # Hogeschool_parking.remove_car(car2)
+    Hogeschool_parking.remove_car(car1)
+    Hogeschool_parking.remove_car(car2)
 
     # Hogeschool_parking.status()
 
