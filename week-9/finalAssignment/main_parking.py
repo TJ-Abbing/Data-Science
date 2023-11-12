@@ -1,4 +1,6 @@
-# main_parking.py
+# File: main_parking.py.
+
+# Import statements.
 from parking_management import Car, CarParking, calculate_fee
 
 def main():

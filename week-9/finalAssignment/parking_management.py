@@ -1,18 +1,24 @@
-# parking_management.py
+# File: parking_management.py.
+
+# Import statements.
 from datetime import datetime
 
+# Declare classes.
 class Car:
+    # Declare constructor.
     def __init__(self, license_plate, brand, model):
         self.license_plate = license_plate
         self.brand = brand
         self.model = model
 
 class CarParking:
+    # Declare constructor.
     def __init__(self, capacity):
         self.capacity = capacity
         self.available_spots = capacity
         self.parked_cars = {}
 
+    # Declare methods.
     def park_car(self, car):
         if self.available_spots <= 0:
             print("Parking lot is full. No available spaces.")
@@ -47,6 +53,7 @@ class CarParking:
         for car in self.parked_cars.values():
             print(f"{car['license_plate']} entered at {car['parked_at']}")
 
+# Declare functions.
 def calculate_fee(duration, rate=0.2):
     fee = duration * rate
     return fee
